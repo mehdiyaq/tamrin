@@ -1,0 +1,68 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@layer components {
+    .result {
+        @apply mt-10 w-full flex items-center justify-between h-8;
+    }
+
+    .todo_r {
+        @apply bg-gray-200 flex items-center justify-center p-3 w-8/12;
+    }
+
+    .ok_r {
+        @apply bg-green-500 flex items-center justify-center p-3 w-2/12 text-white;
+    }
+
+    .del_r {
+        @apply bg-red-500 p-3 flex items-center justify-center w-2/12 text-white;
+    }
+
+    .completed {
+        @apply opacity-20 line-through;
+    }
+
+    button {
+        @apply focus:outline-none;
+    }
+}
+
+
+
+input#menu {
+    display: none;
+}
+
+.cont label {
+    background: url('/open.svg') no-repeat center;
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+
+}
+
+
+input:checked ~ label {
+    background: url('/close.svg') no-repeat center;
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    transition: all 0.2s ease-in-out;
+}
+
+.cont {
+    height: 150px;
+    overflow: hidden;
+}
+
+input:checked ~ .cont {
+    height: 100%;
+    overflow: auto;
+
+}
